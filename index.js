@@ -52,6 +52,7 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
         const tweetMoment = moment(tweetDate, 'MMM DD, YYYY · hh:mm A UTC')
         const tweetText = $(element).find('div.tweet-body div.tweet-content').text()
         const tweetTextHtml = $(element).find('div.tweet-body div.tweet-content').html()
+        const tweetAttachments = $(element).find('div.tweet-body div.gallery-video').html()
 
 
         const tweet = {
@@ -63,14 +64,18 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
             tweetMoment,
             tweetText,
             tweetTextHtml,
+            tweetAttachments,
             tweetFullHtml: $(element).html()
         }
 
+        console.log(tweet)
         tweets.push(tweet)
     })
 
     return tweets
 }
+
+getLatestTweetsByUsername('sk1ppi_')
 
 module.exports = {
     getLatestTweetsByUsername
