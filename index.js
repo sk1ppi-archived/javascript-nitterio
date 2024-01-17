@@ -19,7 +19,6 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
         throw new Error('Twitter username is required')
     }
 
-
     const $ = await axios({
         method: 'GET',
         url: `https://nitter.net/${username}`,
@@ -39,13 +38,11 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
         })
         .catch((error) => console.log(error))
 
+    const tweets = []
     const timelineItemCss = 'div.timeline-item'
     const timelimeItemList = $(timelineItemCss)
 
-    const tweets = []
-
     timelimeItemList.each((index, element) => {
-
 
         const tweetLink = $(element).find('a.tweet-link').attr('href')
         const tweetPhotoURL = $(element).find('div.tweet-body div.tweet-header a.tweet-avatar img.avatar').attr('src')
@@ -71,8 +68,6 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
 
         tweets.push(tweet)
     })
-
-    getLatestTweetsByUsername()
 
     return tweets
 }
