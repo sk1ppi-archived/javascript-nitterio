@@ -68,14 +68,11 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
             tweetFullHtml: $(element).html()
         }
 
-        console.log(tweet)
         tweets.push(tweet)
     })
 
     return tweets
 }
-
-getLatestTweetsByUsername('sk1ppi_')
 
 module.exports = {
     getLatestTweetsByUsername
