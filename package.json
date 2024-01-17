@@ -1,0 +1,35 @@
+{
+  "name": "@sk1ppi/js_nitter_scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sk1ppi/js_nitter_scraper.git"
+  },
+  "keywords": [
+    "nitter",
+    "nitter-scraper",
+    "javascript"
+  ],
+  "author": "kcxyzxyz@icloud.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sk1ppi/js_nitter_scraper/issues"
+  },
+  "homepage": "https://github.com/sk1ppi/js_nitter_scraper#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "cheerio": "^1.0.0-rc.12",
+    "moment": "^2.30.1"
+  }
+}
