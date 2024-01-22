@@ -49,6 +49,7 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
         const tweetFullName = $(element).find('div.tweet-body div.tweet-header div.tweet-name-row div.fullname-and-username a.fullname').text()
         const tweetUsername = $(element).find('div.tweet-body div.tweet-header div.tweet-name-row div.fullname-and-username a.username').text()
         const tweetDate = $(element).find('div.tweet-body div.tweet-header div.tweet-name-row span.tweet-date a').attr('title')
+        const tweetId = $(element).find('div.tweet-body div.tweet-header div.tweet-name-row span.tweet-date a').attr('href').replace('/', '')
         const tweetMoment = moment(tweetDate, 'MMM DD, YYYY · hh:mm A UTC')
         const tweetText = $(element).find('div.tweet-body div.tweet-content').text()
         const tweetTextHtml = $(element).find('div.tweet-body div.tweet-content').html()
@@ -65,7 +66,8 @@ async function getLatestTweetsByUsername(username, axiosConfig = {}) {
             tweetText,
             tweetTextHtml,
             tweetAttachments,
-            tweetFullHtml: $(element).html()
+            tweetFullHtml: $(element).html(),
+            tweetId
         }
 
         tweets.push(tweet)
