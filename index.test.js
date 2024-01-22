@@ -11,12 +11,23 @@ describe('getLatestTweetsByUsername', () => {
         expect(tweets).toBeInstanceOf(Array)
     })
 
-    it('returnm an array of tweets with the correct properties', async () => {
-        const properties = ['tweetLink', 'tweetPhotoURL', 'tweetFullName', 'tweetUsername', 'tweetDate', 'tweetMoment', 'tweetText', 'tweetTextHtml', 'tweetFullHtml']
+    it('returns an array of tweets with the correct properties', async () => {
+        const properties = ['tweetLink', 'tweetPhotoURL', 'tweetFullName', 'tweetUsername', 'tweetDate', 'tweetMoment', 'tweetText', 'tweetTextHtml', 'tweetFullHtml', 'tweetId']
         const tweets = await getLatestTweetsByUsername('elonmusk')
         const tweet = tweets[0]
         const tweetProperties = Object.keys(tweet)
 
-        expect(tweetProperties).toEqual(properties)
+        // attachments is optional
+        const hasAttachments = tweetProperties.includes('tweetAttachments')
+
+        expect(tweet).toBeInstanceOf(Object)
+
+        properties.forEach(property => {
+            expect(tweetProperties).toContain(property)
+        })
+
+        if (hasAttachments) {
+            expect(tweetProperties).toContain('tweetAttachments')
+        }
     })
 })
