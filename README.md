@@ -1,10 +1,10 @@
-# @sk1ppi/js-nitter-scraper
+# @sk1ppi/package-nitter-scraper
+
+This package is an example scraper for fetching tweets from [nitter.net](https://nitter.net/). It is written in JavaScript and uses [axios](https://www.npmjs.com/package/axios) and [cheerio](https://www.npmjs.com/package/cheerio) to fetch and parse the HTML.
 
 ![Made by](https://img.shields.io/badge/SK1PPI-8A2BE2)
 ![GitHub License](https://img.shields.io/github/license/sk1ppi/js_nitter_scraper)
 ![NPM Version](https://img.shields.io/npm/v/@sk1ppi/js_nitter_scraper)
-
-This package is an example scraper for fetching tweets from [nitter.net](https://nitter.net/). It is written in JavaScript and uses [axios](https://www.npmjs.com/package/axios) and [cheerio](https://www.npmjs.com/package/cheerio) to fetch and parse the HTML.
 
 
 ## Install
@@ -13,7 +13,7 @@ To install the package, use the following command:
 
 
 ```shell
-npm i @sk1ppi/js-nitter-scraper
+npm i @sk1ppi/package-nitter-scraper
 ```
 
 ## Example
@@ -21,7 +21,7 @@ npm i @sk1ppi/js-nitter-scraper
 To use the package, use the following code example:
 
 ```js
-const { getLatestTweetsByUsername } = require('@sk1ppi/js-nitter-scraper')
+const { getLatestTweetsByUsername } = require('@sk1ppi/package-nitter-scraper')
 
 async function main () {
  const tweets = await getLatestTweetsByUsername('sk1ppi_)
